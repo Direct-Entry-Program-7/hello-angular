@@ -8,11 +8,13 @@ import {Component} from '@angular/core';
 export class AppComponent {
   price = 100;
   discount = 5;
+  // title = 'Hello Angular I am a property';
+  myClass = 'title-1';
 
   priceChecker(): string {
     const finalPrice = this.price - (this.price * this.discount / 100);
 
-    return finalPrice > 100 ? 'lightgreen': 'lightblue';
+    return finalPrice > 100 ? 'lightgreen' : 'lightblue';
   }
 
   // shouldHighlight(): boolean{
@@ -28,4 +30,10 @@ export class AppComponent {
   // }
 
 
+  // changeTooltip() {
+  //   this.title = "I have been changed...!";
+  // }
+  changeClass() {
+    this.myClass = 'title-2';
+  }
 }
