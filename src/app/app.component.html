@@ -1,2 +1,19 @@
-<h1>Hello Angular</h1>
-
+<h1>Angular in Action</h1>
+<div class="cart-item">
+  <img src="assets/images/item.jpg" alt="hard drive">
+  <div class="cart-item__title">Seagate Portable 2TB External Hard Drive Portable HDD – USB 3.0 for PC, Mac, PS4, & Xbox</div>
+  <div class="cart-item__price">{{price | currency:'USD'}}</div>
+  <div class="cart-item__discount">{{'discount' | uppercase }}: <span>{{discount | percentage}}</span></div>
+  <div class="cart-item__final-price">{{ price - (price * discount / 100) | currency: 'USD'}}</div>
+</div>
+<div class="control-panel">
+  <div class="form-group">
+    <label>Price:</label>
+<!--    <input #txtPrice id="txt-price" type="number" placeholder="Price" min="0" [value]="price" (input)="updatePrice(txtPrice.value)">-->
+    <input type="number" placeholder="Price" min="0" [(ngModel)]="price">
+  </div>
+  <div class="form-group">
+    <label>Discount:</label>
+    <input type="number" placeholder="Discount" min="0" [(ngModel)]="discount">
+  </div>
+</div>
