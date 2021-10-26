@@ -9,6 +9,16 @@ export class AppComponent {
   price = 100;
   discount = 5;
 
+  priceChecker(): string {
+    const finalPrice = this.price - (this.price * this.discount / 100);
+
+    return finalPrice > 100 ? 'lightgreen': 'lightblue';
+  }
+
+  // shouldHighlight(): boolean{
+  //   return (this.discount > 5);
+  // }
+
   // updatePrice(price: string) {
   //   this.price = +price;
   // }
@@ -16,4 +26,6 @@ export class AppComponent {
   // updateDiscount(discount: string) {
   //   this.discount = +discount;
   // }
+
+
 }
