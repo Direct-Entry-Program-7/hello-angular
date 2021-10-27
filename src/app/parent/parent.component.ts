@@ -7,8 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
 
-  inCart = 0;
-  value = 5;
+  inCart = 2;
 
   constructor() { }
 
@@ -17,5 +16,10 @@ export class ParentComponent implements OnInit {
 
   changeCart(emitValue: number) {
     this.inCart += emitValue;
+  }
+
+  removeFromCart() {
+    if (this.inCart === 0) return;
+    this.inCart--;
   }
 }

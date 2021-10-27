@@ -1,8 +1,8 @@
 <header>
   Cart: {{inCart}}
-  <button (click)="value = value + 1;">Remove</button>
+  <button (click)="removeFromCart()">Remove</button>
 </header>
 
 <main>
-  <app-child (updateCart)="changeCart($event)" [stock]="value"></app-child>
+  <app-child (updateCart)="changeCart($event)" [inCart]="inCart"></app-child>
 </main>
