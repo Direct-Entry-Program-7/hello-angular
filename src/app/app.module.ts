@@ -6,13 +6,17 @@ import {FormsModule} from "@angular/forms";
 import { PercentagePipe } from './pipe/percentage.pipe';
 import { StylingComponent } from './styling/styling.component';
 import { StructuralComponent } from './structual/structural.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PercentagePipe,
     StylingComponent,
-    StructuralComponent
+    StructuralComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
@@ -20,6 +24,6 @@ import { StructuralComponent } from './structual/structural.component';
   ],
   exports: [],
   providers: [],
-  bootstrap: [StructuralComponent]
+  bootstrap: [ParentComponent]
 })
 export class AppModule { }
