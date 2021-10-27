@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
 
+  inCart = 0;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  changeCart(emitValue: number) {
+    this.inCart += emitValue;
+  }
 }

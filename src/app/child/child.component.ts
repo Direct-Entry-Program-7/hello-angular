@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChildComponent implements OnInit {
 
-  constructor() { }
+  stock = 6;
+  @Output()
+  updateCart = new EventEmitter<number>();
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
+  addToCart(): void {
+    if (this.stock === 0) return;
+
+    this.stock--;
+    this.updateCart.emit(1);
+  }
 }

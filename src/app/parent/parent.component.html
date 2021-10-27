@@ -1,1 +1,8 @@
-<p>parent works!</p>
+<header>
+  Cart: {{inCart}}
+  <button>Remove</button>
+</header>
+
+<main>
+  <app-child (updateCart)="changeCart($event)"></app-child>
+</main>

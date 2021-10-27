@@ -1,1 +1,5 @@
-<p>child works!</p>
+<img alt="item" src="assets/images/item.jpg">
+<p>Hard Disk</p>
+<p *ngIf="stock !== 0">In stock: {{stock}}</p>
+<p *ngIf="stock===0" class="error">Out of Stock</p>
+<button (click)="addToCart()">Add to cart</button>
