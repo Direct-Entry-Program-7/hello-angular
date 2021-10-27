@@ -21,14 +21,16 @@ export class ChildComponent implements OnInit {
   }
 
   constructor() {
+    console.log("Constructor: ", this.inCart);
     console.log("Child: Constructor");
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log("Child: onChanges");
+    console.log("Child: onChanges", changes);
   }
 
   ngOnInit(): void {
+    console.log("ngOnInit: ", this.inCart);
     console.log("Child: onInit");
   }
 
