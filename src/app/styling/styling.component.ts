@@ -7,9 +7,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StylingComponent implements OnInit {
 
+  highlight = true;
+  primary = true;
+  underline = false;
+
+  highlight2 = true;
+  primary2 = false;
+  underline2 = false;
+
+  h1Classes = {};
+  h1Styles = {};
+
   constructor() { }
 
   ngOnInit(): void {
+    this.setH1Classes();
+    this.setH1Styles();
   }
 
+  setH1Classes(): void {
+    this.h1Classes = {
+      highlight: this.highlight,
+      primary: this.primary,
+      underline: this.underline
+    };
+  }
+
+  setH1Styles(): void {
+    this.h1Styles = {
+      'background-color': this.highlight2 ? 'yellow': 'white',
+      color: this.primary2 ? 'blue': 'black',
+      'text-decoration': this.underline2 ? 'underline': 'none'
+    };
+  }
 }
