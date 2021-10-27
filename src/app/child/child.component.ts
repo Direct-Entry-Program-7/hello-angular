@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -13,17 +13,46 @@ export class ChildComponent implements OnInit {
   @Input()
   inCart = 0;
 
-  constructor() {
-  }
-
-  ngOnInit(): void {
-
-  }
-
   addToCart(): void {
     if ((this.stock - this.inCart) === 0) return;
 
     this.stock--;
     this.updateCart.emit(1);
+  }
+
+  constructor() {
+    console.log("Child: Constructor");
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log("Child: onChanges");
+  }
+
+  ngOnInit(): void {
+    console.log("Child: onInit");
+  }
+
+  ngDoCheck(): void {
+    console.log("Child: onDoCheck");
+  }
+
+  ngAfterContentInit(): void {
+    console.log("Child: After Content Init");
+  }
+
+  ngAfterContentChecked(): void {
+    console.log("Child: After Content Checked");
+  }
+
+  ngAfterViewInit(): void {
+    console.log("Child: After view Init");
+  }
+
+  ngAfterViewChecked(): void {
+    console.log("Child: After View Checked");
+  }
+
+  ngOnDestroy(): void {
+    console.log("Child: On Destroy")
   }
 }
