@@ -30,4 +30,18 @@ export class StructuralComponent implements OnInit {
     this.students.push({id: 'S005', name: 'Dinusha'});
     this.students.push({id: 'S008', name: 'Chandimal'});
   }
+
+
+  byId(index: number, s: {id: string, name: string}): string {
+      return s.id;
+  }
+
+  reloadStudents2() {
+    this.students = [];
+    this.students.push({id: 'S009', name: 'Manoj+'});
+    this.students.push({id: 'S002', name: 'Gayal'});
+    this.students.push({id: 'S003', name: 'Pethum'});
+    this.students.push({id: 'S005', name: 'Dinusha'});
+    this.students.push({id: 'S008', name: 'Chandimal'});
+  }
 }

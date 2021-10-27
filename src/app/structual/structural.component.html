@@ -13,7 +13,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let s of students; let i = index" [class.row]="i % 2 === 0">
+<!--    <tr *ngFor="let s of students; let i = index" [class.row]="i % 2 === 0">-->
+    <tr *ngFor="let s of students; let i = index; trackBy: byId">
       <td>{{i}}</td>
       <td>{{s.id}}</td>
       <td>{{s.name}}</td>
@@ -22,5 +23,7 @@
 </table>
 <div class="control-center">
 <button (click)="reloadStudents()">Reload Students</button>
+<button (click)="reloadStudents2()">Reload Students 2</button>
+<button (click)="students[1].name = 'Kasun'">Change Student Details</button>
 <button  (click)="students = []">Clear Students</button>
 </div>
