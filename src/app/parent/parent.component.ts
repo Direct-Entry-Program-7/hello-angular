@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ParentComponent implements OnInit {
 
   inCart = 0;
+  value = 5;
 
   constructor() { }
 
